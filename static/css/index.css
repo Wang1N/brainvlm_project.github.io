@@ -605,16 +605,17 @@ code {
   }
   
   .publication-header .hero-body {
-    padding: 3rem 1rem 2rem;
+    padding: 3rem 1rem 0rem;
   }
   
   .publication-title {
     font-size: 2.5rem !important;
     line-height: 1.2 !important;
-    margin-bottom: 1.5rem !important;
+    margin-bottom: -0.5rem !important;
   }
   
   .publication-authors {
+    margin-top: 0.2rem !important;
     font-size: 1rem !important;
   }
   
