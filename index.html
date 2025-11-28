@@ -429,30 +429,22 @@
 
 
 <!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body has-text-centered">
-      <!-- 添加标题 -->
-      <h2 class="title is-3" style="margin-bottom: 0.75em;">
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container" style="max-width: 1100px; margin: 0 auto;">
+      <h2 class="title is-3 has-text-centered" style="margin-bottom:2rem;">
         Overview of the BrainVLM Dataset and Model Architecture
       </h2>
-      <!-- 替换视频为PDF图片，使用<img>嵌入PDF首页缩略图（需要先将pdf转为图片，比如jpg/png），否则只能提供PDF下载或预览链接 -->
-      <!-- 如果只需要链接或内嵌PDF，使用如下方式（更推荐，尤其兼容性好）-->
-      <!-- 使用svg外层包一个div设置白色背景，防止深色主题浏览器变黑，看不到内容 -->
       <div class="item">
         <div style="background: #ffffff; border-radius: 6px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
-          <embed src="static/images/First_graph.svg" width="100%" height="600px" style="opacity: 1; display: block; background: #ffffff; color-scheme: light;" />
+          <img src="static/images/First_graph.svg" alt="BrainVLM Dataset and Architecture Overview" loading="lazy" style="opacity: 1; display: block; background: #ffffff; color-scheme: light; width: 90%; max-width: 1200px; min-width: 400px;" />
         </div>
+        <h2 class="subtitle has-text-justified" style="margin-top: 1.5rem;">
+          a, A multi-modal brain tumor dataset was constructed from 36 online sources and 12 collaborating medical institutions, comprising 46,512 patients. Each case includes either 2D MRI slices or multi-sequence 3D MRI scans (T1-weighted [T1], T1 contrast-enhanced [T1c], T2-weighted [T2], T2-FLAIR [FLAIR]), paired with pathologically confirmed diagnoses, optional radiology reports (or text descriptions). The detailed number of patients across 12 brain tumor types and their subtypes is shown on the right panel.
+          <br><br>
+          b, We developed BrainVLM, a vision-language foundation model designed for brain tumor analysis. The model processes multi-parametric MRI scans at different resolutions through a shared vision encoder and integrates text data via an LLM-based architecture. BrainVLM was trained to classify tumor types with quantified diagnostic uncertainty and a radiology report.
+        </h2>
       </div>
-      <h2 class="subtitle" style="text-align: justify;">
-        a, A multi-modal brain tumor dataset was constructed from 36 online sources and 12 collaborating medical
-        institutions, comprising 46,512 patients. Each case includes either 2D MRI slices or multi-sequence 3D MRI scans (T1-weighted [T1], T1 contrast-
-        enhanced [T1c], T2-weighted [T2], T2-FLAIR [FLAIR]), paired with pathologically confirmed diagnoses, optional radiology reports (or text
-        descriptions). The detailed number of patients across 12 brain tumor types and their subtypes is shown on the right panel. b, We developed
-        BrainVLM, a vision-language foundation model designed for brain tumor analysis. The model processes multi-parametric MRI scans at different
-        resolutions through a shared vision encoder and integrates text data via an LLM-based architecture. BrainVLM was trained to classify tumor types
-        with quantified diagnostic uncertainty and a radiology report.
-      </h2>
     </div>
   </div>
 </section>
