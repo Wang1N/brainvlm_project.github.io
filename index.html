@@ -439,8 +439,10 @@
       <!-- 替换视频为PDF图片，使用<img>嵌入PDF首页缩略图（需要先将pdf转为图片，比如jpg/png），否则只能提供PDF下载或预览链接 -->
       <!-- 如果只需要链接或内嵌PDF，使用如下方式（更推荐，尤其兼容性好）-->
       <!-- 使用svg外层包一个div设置白色背景，防止深色主题浏览器变黑，看不到内容 -->
-      <div style="background: #ffffff; border-radius: 6px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
-        <embed src="static/images/First_graph.svg" width="100%" height="600px" style="opacity: 1; display: block; background: #ffffff; color-scheme: light;" />
+      <div class="item">
+        <div style="background: #ffffff; border-radius: 6px; overflow: hidden; display: flex; justify-content: center; align-items: center;">
+          <embed src="static/images/First_graph.svg" width="100%" height="600px" style="opacity: 1; display: block; background: #ffffff; color-scheme: light;" />
+        </div>
       </div>
       <h2 class="subtitle" style="text-align: justify;">
         a, A multi-modal brain tumor dataset was constructed from 36 online sources and 12 collaborating medical
@@ -492,7 +494,8 @@
 <!-- Paper poster -->
 <section class="hero is-small">
   <div class="hero-body">
-    <div class="container">
+    <!-- 设置容器宽度稍小，例如最大宽度为900px并水平居中 -->
+    <div class="container" style="max-width: 1100px; margin: 0 auto;">
       <h2 class="title is-3 has-text-centered" style="margin-bottom:2rem;">Result</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
@@ -521,7 +524,7 @@
 <!-- Image carousel -->
 <section class="hero is-medium">
   <div class="hero-body">
-    <div class="container">
+    <div class="container" style="max-width: 1100px; margin: 0 auto;">
       <h2 class="title is-2 has-text-centered" style="margin-bottom: 2.5rem;">Research Results Overview</h2>
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
