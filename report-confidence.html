@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reports &amp; Confidence | BrainVLM</title>
+  <link rel="icon" href="static/images/hku_logo.png">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/project-pages.css">
+</head>
+<body class="pp-page-report">
+  <header class="pp-nav"><div class="pp-nav-inner"><a class="pp-brand" href="index.html">BrainVLM</a><nav class="pp-nav-links"><a class="pp-home-link" href="index.html">Home</a><a href="input.html">Input &amp; data</a><a href="diagnosis.html">Diagnosis &amp; retrospective</a><a class="is-active" href="report-confidence.html">Reports &amp; confidence</a><a href="clinical.html">Prospective &amp; readers</a><a href="evaluation.html">Dataset Preprocessing &amp; Training</a></nav></div></header>
+  <main>
+    <section class="pp-hero pp-hero-compact">
+      <div class="pp-wrap pp-wrap-wide">
+        <div class="pp-kicker">03 · Reports and confidence</div>
+        <h1>Make every diagnosis easier to review</h1>
+        <h2>Radiology-style explanation plus calibrated uncertainty.</h2>
+        <p class="pp-lede">BrainVLM does not stop at a tumor label. It produces a structured report describing imaging findings and a confidence signal that can help clinicians identify cases for closer review.</p>
+        <div class="pp-actions">
+          <a class="pp-button" href="https://huggingface.co/spaces/jcccy/BrainVLM">Try the interactive demo →</a>
+          <a class="pp-button is-light" href="static/pdfs/BrainVLM_main.pdf">Read the paper</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-section is-soft">
+      <div class="pp-wrap pp-wrap-wide">
+        <h2>Three linked outputs</h2>
+        <p class="pp-section-intro">Classification, explanation, and reliability are designed as one case-level output.</p>
+        <div class="pp-grid-3">
+          <article class="pp-card"><div class="pp-card-copy"><span class="pp-tag">01 · Diagnosis</span><h3>Comprehensive tumor prediction</h3><p>The model predicts across the major WHO CNS5 categories and most clinically relevant subtypes.</p></div></article>
+          <article class="pp-card"><div class="pp-card-copy"><span class="pp-tag">02 · Report</span><h3>Radiology-style rationale</h3><p>Generated findings describe enhancement, signal intensity, lesion location, and other imaging attributes supporting the impression.</p></div></article>
+          <article class="pp-card"><div class="pp-card-copy"><span class="pp-tag">03 · Confidence</span><h3>Uncertainty-aware review</h3><p>Confidence helps distinguish straightforward predictions from cases that may benefit from a second candidate or human review.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-section">
+      <div class="pp-wrap pp-wrap-wide">
+        <h2>Report quality and clinical content</h2>
+        <p class="pp-section-intro">Each report metric is paired with a short clinical reading on the left and the corresponding figure on the right.</p>
+
+        <article class="pp-report-split">
+          <div class="pp-report-copy">
+            <span class="pp-tag">Automated evaluation</span>
+            <h3>Faithful wording and clinical entities</h3>
+            <p>BrainVLM leads both cohorts on the complementary report metrics: primary / external RaTEScore 0.75 / 0.69, RadGraph-XL F1 0.57 / 0.52, and BLEU-4 0.43 / 0.35. The combination reflects both semantic content and lexical agreement rather than fluency alone.</p>
+          </div>
+          <figure class="pp-figure pp-figure-panel">
+            <img src="static/images/main_figure3d.svg" alt="BrainVLM report quality metric comparison" loading="lazy">
+            <figcaption>Report-level comparison using RaTEScore, F1, RadGraph-XL, and BLEU-4.</figcaption>
+          </figure>
+        </article>
+
+        <article class="pp-report-split">
+          <div class="pp-report-copy">
+            <span class="pp-tag">Clinical content</span>
+            <h3>Imaging evidence survives generation</h3>
+            <p>An LLM-as-a-judge assessment found 80% correctness for contrast enhancement, 71–74% for T1, T2, and T2-FLAIR signal patterns, and 60% for lesion localization. Localization is the hardest attribute, but still exceeds the strongest baseline at 51%.</p>
+          </div>
+          <figure class="pp-figure pp-figure-panel">
+            <img src="static/images/sup_figure7d.svg" alt="BrainVLM clinical content accuracy across report attributes" loading="lazy">
+            <figcaption>Clinical content accuracy for MRI signal characteristics and lesion localization.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section class="pp-section is-soft">
+      <div class="pp-wrap pp-wrap-wide">
+        <h2>Confidence as a workflow signal</h2>
+        <p class="pp-section-intro">Confidence is evaluated for reliability and used to support confidence-triggered Top-2 review of ambiguous cases.</p>
+
+        <div class="pp-confidence-split">
+          <article class="pp-stack-block is-narrow">
+            <figure class="pp-figure pp-figure-panel">
+              <img src="static/images/main_figure3b.svg" alt="BrainVLM confidence calibration analysis" loading="lazy">
+              <figcaption>Confidence calibration analysis across the model’s prediction outputs.</figcaption>
+            </figure>
+            <div class="pp-report-copy">
+              <span class="pp-tag">Confidence calibration</span>
+              <h3>Confidence separates routine from uncertain cases</h3>
+              <p>Reliable BrainVLM concentrates correct answers in the highest-confidence range while reducing overconfident errors, creating a practical signal for when a case deserves closer review.</p>
+            </div>
+          </article>
+
+          <article class="pp-stack-block">
+            <figure class="pp-figure pp-figure-panel">
+              <img src="static/images/main_figure3c.svg" alt="Vanilla and reliable BrainVLM confidence distributions" loading="lazy">
+              <figcaption>Vanilla versus reliable BrainVLM confidence distributions for correct and error answers.</figcaption>
+            </figure>
+            <div class="pp-report-copy">
+              <span class="pp-tag">Reliable inference</span>
+              <h3>Correct and error distributions become visible</h3>
+              <p>The revised confidence analysis contrasts vanilla and reliable BrainVLM across confidence bands. This makes calibration failures easier to identify and supports a confidence-triggered Top-2 review when the first prediction is uncertain.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="pp-number-grid pp-number-grid-tight">
+          <div class="pp-number"><strong>73%</strong><span>Correct diagnoses above 90% confidence</span></div>
+          <div class="pp-number"><strong>70%</strong><span>Incorrect diagnoses in the 50–85% range</span></div>
+          <div class="pp-number"><strong>0.82 → 0.86</strong><span>Primary F1 with confidence-triggered Top-2 review</span></div>
+          <div class="pp-number"><strong>Review</strong><span>Confidence is a triage signal, not a replacement for judgment</span></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="pp-footer"><a href="index.html">← Back to BrainVLM overview</a> · <a href="diagnosis.html">Diagnosis &amp; retrospective</a> · <a href="clinical.html">Prospective &amp; readers →</a></footer>
+</body>
+</html>

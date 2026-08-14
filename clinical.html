@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prospective &amp; Multi-reader Studies | BrainVLM</title>
+  <link rel="icon" href="static/images/favicon.ico">
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/project-pages.css">
+</head>
+<body class="pp-page-clinical">
+  <header class="pp-nav"><div class="pp-nav-inner"><a class="pp-brand" href="index.html">BrainVLM</a><nav class="pp-nav-links"><a class="pp-home-link" href="index.html">Home</a><a href="input.html">Input &amp; data</a><a href="diagnosis.html">Diagnosis &amp; retrospective</a><a href="report-confidence.html">Reports &amp; confidence</a><a class="is-active" href="clinical.html">Prospective &amp; readers</a><a href="evaluation.html">Dataset Preprocessing &amp; Training</a></nav></div></header>
+  <main>
+    <section class="pp-hero pp-hero-compact">
+      <div class="pp-wrap pp-wrap-wide">
+        <div class="pp-kicker">04 · Prospective and multi-reader evidence</div>
+        <h1>Tested in the clinical workflow</h1>
+        <h2>Prospective cases and neuroradiologists with and without AI assistance.</h2>
+        <p class="pp-lede">Beyond retrospective benchmarks, BrainVLM was evaluated in real-world prospective cases and in a blinded multi-reader study to examine whether its output can support clinical interpretation.</p>
+        <div class="pp-stat-row">
+          <span class="pp-stat">Prospective cohort</span>
+          <span class="pp-stat">248 reader-study cases</span>
+          <span class="pp-stat">12 neuroradiologists</span>
+          <span class="pp-stat">−36.1% diagnostic time</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-section is-soft">
+      <div class="pp-wrap pp-wrap-wide">
+        <header class="pp-section-head">
+          <p class="pp-kicker">Prospective study</p>
+          <h2>Real-world evaluation before definitive diagnosis</h2>
+          <p class="pp-section-intro">Cases entered BrainVLM along routine surgical and non-operative pathways, under real acquisition and workflow conditions—before the final reference diagnosis was available. Among 1,162 admissions, 776 cases entered the prospective workflow after predefined exclusions and then followed surgical or non-operative pathways, with pathology or radiology diagnosis as the reference outcome.</p>
+        </header>
+
+        <article class="pp-align-row is-flow">
+          <div class="pp-report-copy">
+            <span class="pp-tag">Collection flow</span>
+            <h3>Cohort at a glance</h3>
+            <div class="pp-list">
+              <div><span>Eligible prospective cases</span><strong>n=776</strong></div>
+              <div><span>Clinical pathways</span><strong>Surgery &amp; non-operative care</strong></div>
+              <div><span>Reference outcome</span><strong>Pathology or radiology diagnosis</strong></div>
+            </div>
+          </div>
+          <figure class="pp-figure pp-figure-panel">
+            <img src="static/images/main_figure2c.svg" alt="BrainVLM prospective cohort collection and diagnostic flow" loading="lazy">
+            <figcaption>Prospective cohort collection flow from admission through surgery or non-operative management and reference diagnosis.</figcaption>
+          </figure>
+        </article>
+
+        <article class="pp-align-row is-chart">
+          <div class="pp-report-copy">
+            <span class="pp-tag">Prospective results</span>
+            <h3>Performance remains strong before definitive diagnosis</h3>
+            <p>In the primary prospective cohort, BrainVLM reached 0.85 sensitivity and 0.87 precision, with a macro-F1 of 0.84. External prospective results remained competitive, with sensitivity 0.78, precision 0.73, and macro-F1 0.75.</p>
+          </div>
+          <figure class="pp-figure pp-figure-panel">
+            <img src="static/images/main_figure3a.svg" alt="BrainVLM primary and external prospective study results" loading="lazy">
+            <figcaption>Comparison of primary and external prospective study results across sensitivity, precision, F1, and kappa.</figcaption>
+          </figure>
+        </article>
+
+        <div class="pp-number-grid pp-number-grid-tight">
+          <div class="pp-number"><strong>n=776</strong><span>Patients entering BrainVLM prospective workflow</span></div>
+          <div class="pp-number"><strong>0.87</strong><span>Primary prospective precision</span></div>
+          <div class="pp-number"><strong>0.84</strong><span>Primary prospective macro-F1</span></div>
+          <div class="pp-number"><strong>F1 +4%</strong><span>Prospective improvement versus radiologists</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-section">
+      <div class="pp-wrap pp-wrap-wide">
+        <h2>Multi-reader study</h2>
+        <p class="pp-section-intro">A blinded reader study tested whether BrainVLM can improve diagnostic performance and efficiency across different levels of neuroradiology experience.</p>
+
+        <article class="pp-align-row is-tall">
+          <div class="pp-report-copy">
+            <span class="pp-tag">Study design and reader performance</span>
+            <h3>AI assistance improved performance across seniority</h3>
+            <p>In 248 cases, 12 neuroradiologists reviewed the same studies without AI and then with BrainVLM output. Readers were stratified by experience level to test whether assistance generalized across clinical backgrounds.</p>
+            <div class="pp-list">
+              <div><span>Junior neuroradiologists</span><strong>F1 0.52 → 0.67</strong></div>
+              <div><span>Senior neuroradiologists</span><strong>F1 0.55 → 0.74</strong></div>
+              <div><span>Expert neuroradiologists</span><strong>F1 0.79 → 0.85</strong></div>
+              <div><span>Diagnostic time</span><strong>−36.1%</strong></div>
+            </div>
+            <div class="pp-note pp-note-inline">
+              <strong>Safety and difficult-case analysis.</strong> Among 57 cases with an incorrect BrainVLM suggestion, overall reader accuracy remained stable after AI review (50.0% without AI vs 50.9% with AI). In a separate bottom-10% low-confidence subset (N=385), BrainVLM reached 65.0% accuracy, outperforming the two junior readers (51% and 44%) and approaching the expert readers (72% and 66%). These analyses suggest that low confidence identifies genuinely difficult cases and that incorrect suggestions did not produce systematic over-reliance in this study.
+            </div>
+          </div>
+          <figure class="pp-figure pp-figure-panel">
+            <img src="static/images/main_figure4.svg" alt="BrainVLM multi-reader clinical evaluation" loading="lazy">
+            <figcaption>Multi-reader evaluation across reader experience levels, with and without BrainVLM assistance.</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <section class="pp-section is-soft">
+      <div class="pp-wrap pp-wrap-wide">
+        <h2>Representative clinical impact</h2>
+        <p class="pp-section-intro">Two cases from the multi-reader study illustrate how BrainVLM assistance can shorten review time while correcting or strengthening the expert interpretation.</p>
+        <figure class="pp-figure pp-figure-panel pp-figure-impact">
+          <img src="static/images/sup_figure16.svg" alt="Two representative cases showing reduced diagnostic time and increased confidence with BrainVLM assistance" loading="lazy">
+          <figcaption>Supplementary Figure 16: BrainVLM assistance reduced expert reading time by 70% and 71% in two representative cases; one case corrected an initial misdiagnosis and the other increased diagnostic confidence.</figcaption>
+        </figure>
+
+        <div class="pp-grid-2 is-pair pp-impact-cases">
+          <article class="pp-card">
+            <div class="pp-card-copy">
+              <span class="pp-tag">Case 1 · Diagnostic correction</span>
+              <h3>From glioma to the pathology-confirmed brain metastasis</h3>
+              <p>A 62-year-old woman was initially diagnosed by the expert reader as having a glioma with 60% confidence after 132 seconds of review. BrainVLM instead suggested brain metastasis—the pathology-confirmed category—with 75% confidence. With this additional evidence, the expert corrected the diagnosis in 40 seconds, reducing reading time by 70%.</p>
+            </div>
+          </article>
+          <article class="pp-card">
+            <div class="pp-card-copy">
+              <span class="pp-tag">Case 2 · Diagnostic reinforcement</span>
+              <h3>Faster confirmation of a difficult pediatric glioma</h3>
+              <p>An 8-year-old girl was correctly diagnosed with glioma by the expert, but the unaided interpretation required 80 seconds and carried only 60% confidence. BrainVLM independently predicted glioma with 90% confidence; with AI support, the expert finalized the diagnosis in 23 seconds, increased confidence to 70%, and reduced reading time by 71%.</p>
+            </div>
+          </article>
+        </div>
+        <div class="pp-note"><strong>Two complementary forms of assistance.</strong> The first case illustrates diagnostic correction, while the second illustrates reinforcement of an already correct but uncertain interpretation. Together, they show how the diagnosis, confidence estimate, and supporting report can act as review cues rather than replacing the expert decision.</div>
+
+        <div class="pp-clinical-summary">
+          <h2>Clinical interpretation</h2>
+          <p class="pp-section-intro">These experiments support a workflow in which BrainVLM provides structured evidence while clinicians remain responsible for final interpretation.</p>
+          <div class="pp-number-grid">
+            <div class="pp-number"><strong>23.3%</strong><span>Mean reader F1 improvement with AI assistance</span></div>
+            <div class="pp-number"><strong>36.1%</strong><span>Diagnostic time reduction</span></div>
+            <div class="pp-number"><strong>12</strong><span>Neuroradiologists in the reader study</span></div>
+            <div class="pp-number"><strong>248</strong><span>Cases in the blinded reader evaluation</span></div>
+          </div>
+          <div class="pp-note">BrainVLM is a research and clinical decision-support system, not a standalone medical device. Further validation is needed before deployment in a specific clinical population.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="pp-footer"><a href="index.html">← Back to BrainVLM overview</a> · <a href="diagnosis.html">Diagnosis &amp; retrospective</a> · <a href="evaluation.html">Dataset Preprocessing &amp; Training →</a></footer>
+</body>
+</html>
