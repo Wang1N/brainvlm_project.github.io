@@ -193,6 +193,15 @@ h2.title.publication-title.is-1::before {
   line-height: 0.92;
 }
 
+.bv-venue {
+  margin: 0 0 0.8rem;
+  color: var(--teal-deep);
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  line-height: 1.4;
+}
+
 .bv-hero-title {
   max-width: none;
   margin: 0 auto 1rem;
