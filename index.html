@@ -55,8 +55,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   
   <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://ajax.googleapis.com">
   <link rel="preconnect" href="https://documentcloud.adobe.com">
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
@@ -86,9 +84,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,650&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="static/css/landing-v2.css">
+  <link rel="stylesheet" href="static/css/landing-v2.css?v=20260821-borderless-input">
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -173,7 +169,7 @@
       --bv-ink: #14232d;
       --bv-muted: #647b86;
       --bv-line: #d9e7eb;
-      --bv-bg: #eef5f7;
+      --bv-bg: #f6f8f7;
       --bv-panel: rgba(255, 255, 255, 0.88);
       --bv-teal: #0f766e;
       --bv-teal-dark: #075e59;
@@ -188,10 +184,7 @@
 
     body {
       color: var(--bv-ink);
-      background:
-        radial-gradient(circle at 2% 0%, rgba(15, 118, 110, 0.13), transparent 30rem),
-        radial-gradient(circle at 98% 7%, rgba(40, 107, 134, 0.10), transparent 26rem),
-        var(--bv-bg);
+      background: var(--bv-bg);
     }
 
     body::before {
@@ -200,11 +193,7 @@
       z-index: -1;
       pointer-events: none;
       content: "";
-      opacity: 0.28;
-      background-image: linear-gradient(rgba(20, 63, 74, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(20, 63, 74, 0.035) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      background: radial-gradient(1200px 520px at 50% -8%, rgba(15, 118, 110, 0.07), transparent 62%);
     }
 
     .hero-body {
@@ -214,20 +203,12 @@
 
     #main-content > section:first-child {
       position: relative;
-      background: var(--bv-bg) !important;
+      background: transparent !important;
     }
 
     #main-content > section:first-child::after {
-      position: absolute;
-      right: 8%;
-      bottom: 4rem;
-      width: 11rem;
-      height: 11rem;
-      border: 1px solid rgba(15, 118, 110, 0.14);
-      border-radius: 50%;
-      content: "";
-      box-shadow: 0 0 0 22px rgba(15, 118, 110, 0.035), 0 0 0 44px rgba(15, 118, 110, 0.025);
-      pointer-events: none;
+      content: none !important;
+      display: none !important;
     }
 
     h2.title.publication-title.is-1 {
@@ -642,7 +623,7 @@
     }
 
     .footer {
-      background: #e7f0f2;
+      background: transparent;
       border-top-color: var(--bv-line);
     }
 
@@ -1340,10 +1321,10 @@
       <nav class="bv-topnav-links" aria-label="Primary">
         <a href="index.html">Home</a>
         <a href="input.html">Input</a>
-        <a href="diagnosis.html">Diagnosis &amp; retrospective</a>
-        <a href="report-confidence.html">Reports &amp; confidence</a>
-        <a href="clinical.html">Prospective &amp; readers</a>
-        <a href="evaluation.html">Dataset Preprocessing &amp; Training</a>
+        <a href="diagnosis.html">Diagnosis</a>
+        <a href="report-confidence.html">Reports</a>
+        <a href="clinical.html">Clinical</a>
+        <a href="evaluation.html">Data &amp; Training</a>
         <a href="static/pdfs/BrainVLM_main.pdf" target="_blank" rel="noopener">Paper</a>
         <a href="https://github.com/HKU-HealthAI/BrainVLM" target="_blank" rel="noopener">Code</a>
       </nav>
@@ -1354,18 +1335,15 @@
   <section class="new-landing bv-hero" aria-label="BrainVLM introduction">
     <div class="bv-hero-body">
       <div class="bv-hero-copy">
-        <p class="bv-hero-brand">BrainVLM</p>
-        <h1 class="bv-hero-title">A vision-language foundation model for comprehensive preoperative brain tumor diagnosis</h1>
-        <p class="bv-hero-claim">
-          BrainVLM reads complete or incomplete MRI protocols with patient metadata, then returns a diagnosis, confidence estimate, and radiology-style explanation.
-        </p>
+        <h1 class="bv-hero-title">BrainVLM — A vision-language foundation model for comprehensive preoperative brain tumor diagnosis</h1>
         <div class="bv-meta-strip bv-hero-meta">
           <p><strong>Authors</strong>Yinong Wang<sup>*</sup> · Jianwen Chen<sup>*</sup> · Zhou Chen<sup>*</sup> · Shuwen Kuang<sup>*</sup> · Haoning Jiang · Yanzhao Shi · Huichun Yuan · Yan-ran (Joyce) Wang · Bing Wang · Lei Wu · Bin Tang · Li Meng · Baihua Luo · Bin Zhou · Wei Ding · Weiming Zhong · Wei Hou · Yuanbing Chen · Zhiping Wan · Wei Wang · Zhenkun Xiao · Wenwu Wan · Allen He · Yuyin Zhou · Longbo Zhang · Feifei Wang · Zhixiong Liu · Michael Iv · Xuan Gong<sup>†</sup> · Liangqiong Qu<sup>†</sup></p>
-          <p class="bv-institutions"><strong>Institutions</strong><span class="bv-institution-list">The University of Hong Kong · Central South University · Stanford University · University of California, Santa Cruz · Tongji University · Nanchang University · Lanzhou University · University of South China · Changde First People's Hospital · Chongqing Traditional Chinese Medicine Hospital · The First Affiliated Hospital of Lanzhou University · The First Affiliated Hospital of Nanchang University · The Second Affiliated Hospital of Nanchang University · Jiangxi Provincial People's Hospital · Shanghai Tongji Hospital · Xiangya Hospital, Central South University · The Third Xiangya Hospital · Hunan Provincial Children's Hospital · Shenzhen Second People's Hospital · University of South China Second Hospital</span></p>
+          <p class="bv-institutions"><strong>Institutions</strong><span class="bv-institution-list">The University of Hong Kong · Xiangya School of Medicine, Central South University · etc.</span></p>
         </div>
         <div class="bv-hero-actions">
           <div class="bv-cta-row">
-            <a class="bv-cta" href="static/pdfs/BrainVLM_main.pdf" target="_blank" rel="noopener">Read the paper</a>
+            <a class="bv-cta" href="static/pdfs/BrainVLM_main.pdf" target="_blank" rel="noopener">Paper</a>
+            <a class="bv-cta is-ghost" href="static/pdfs/BrainVLM_sup.pdf" target="_blank" rel="noopener">Supplement</a>
             <a class="bv-cta is-ghost" href="https://github.com/HKU-HealthAI/BrainVLM" target="_blank" rel="noopener">View code</a>
             <a class="bv-cta is-ghost" href="https://huggingface.co/spaces/jcccy/BrainVLM" target="_blank" rel="noopener">Try the demo</a>
           </div>
@@ -1384,32 +1362,27 @@
     <div class="bv-stat"><strong>Multi-center</strong><span>retrospective &amp; prospective evaluation</span></div>
   </div>
 
-  <section class="new-landing bv-section center-copy bv-reveal" aria-labelledby="explore-title">
-    <p class="bv-kicker">Explore the study</p>
-    <h2 id="explore-title">A focused view of BrainVLM</h2>
-    <p class="bv-lede">Choose a chapter to explore the model inputs, diagnostic outputs, clinical evidence, or evaluation principles.</p>
-    <nav class="bv-chapters" aria-label="BrainVLM project sections">
-      <a class="bv-chapter" href="input.html"><span class="idx">01</span><div><h3>Input &amp; data</h3><p>Full or missing MRI sequences, raw or pre-processed images, and metadata.</p></div><span class="go">Explore inputs →</span></a>
-      <a class="bv-chapter" href="diagnosis.html"><span class="idx">02</span><div><h3>Diagnosis &amp; retrospective results</h3><p>Comprehensive tumor classification and primary/external diagnostic performance.</p></div><span class="go">Explore diagnosis →</span></a>
-      <a class="bv-chapter" href="report-confidence.html"><span class="idx">03</span><div><h3>Reports &amp; confidence</h3><p>Radiology-style explanations, report quality, and calibrated uncertainty.</p></div><span class="go">Explore outputs →</span></a>
-      <a class="bv-chapter" href="clinical.html"><span class="idx">04</span><div><h3>Prospective &amp; multi-reader</h3><p>Real-world prospective evaluation and neuroradiologist reader studies.</p></div><span class="go">Explore clinical use →</span></a>
-      <a class="bv-chapter" href="evaluation.html"><span class="idx">05</span><div><h3>Dataset Preprocessing &amp; Training</h3><p>Multi-source curation, BrainTumor48K construction, and progressive 2D–3D training.</p></div><span class="go">Explore the pipeline →</span></a>
+  <section class="new-landing bv-section bv-quick-section bv-reveal">
+    <nav class="bv-quick-nav" aria-label="BrainVLM project sections">
+      <a href="input.html"><span>01</span>Input</a>
+      <a href="diagnosis.html"><span>02</span>Diagnosis</a>
+      <a href="report-confidence.html"><span>03</span>Reports</a>
+      <a href="clinical.html"><span>04</span>Clinical</a>
+      <a href="evaluation.html"><span>05</span>Data &amp; Training</a>
     </nav>
   </section>
 
   <section class="new-landing bv-section is-band bv-reveal" aria-labelledby="input-title">
     <div class="bv-section-inner">
-      <p class="bv-kicker">01 · Input flexibility</p>
-      <h2 id="input-title">One model for real-world MRI protocols</h2>
-      <p class="bv-lede">BrainVLM is designed for the way MRI is actually acquired: multiple sequences when available, missing sequences when necessary, and either raw or pre-processed images.</p>
+      <p class="bv-kicker">01 · Input</p>
+      <h2 id="input-title">Input</h2>
       <div class="bv-split bv-input-layout">
         <div class="bv-copy-stack">
-          <h3>Multi-sequence, metadata-aware input</h3>
-          <p>BrainVLM interprets complete or missing T1, T1c, T2, and FLAIR sequences as one case, with support for raw or pre-processed MRI and complementary metadata such as age, sex, and radiology text.</p>
-          <a class="bv-link" href="input.html">View the complete input and data page →</a>
+          <p>BrainVLM reads complete or missing T1, T1c, T2, and FLAIR as one case, using raw or pre-processed MRI with available metadata.</p>
+          <a class="bv-link" href="input.html">View input details →</a>
         </div>
         <div class="bv-visual-pair bv-input-visual">
-          <figure class="bv-visual bv-input-figure"><img src="static/images/main_figure1b.svg" alt="BrainVLM multi-sequence MRI input and case-level interpretation" loading="lazy"><figcaption><strong>Multi-sequence input.</strong> T1, T1c, T2, and FLAIR can be interpreted as one case.</figcaption></figure>
+          <figure class="bv-visual bv-input-figure"><img src="static/images/main_figure1b.svg" alt="BrainVLM multi-sequence MRI input and case-level interpretation" loading="lazy"></figure>
           <!-- <figure class="bv-visual"><img src="static/images/Example2.svg" alt="Representative MRI diagnosis and report visualization" loading="lazy"><figcaption><strong>Case-level output.</strong> Imaging evidence connects to the diagnostic narrative and confidence estimate.</figcaption></figure> -->
         </div>
       </div>
@@ -1417,51 +1390,43 @@
   </section>
 
   <section class="new-landing bv-section bv-reveal" aria-labelledby="diagnosis-title">
-    <p class="bv-kicker">02 · Comprehensive diagnosis</p>
-    <h2 id="diagnosis-title">A first comprehensive view of brain tumor diagnosis</h2>
-    <p class="bv-lede">BrainVLM covers major brain tumor classes and clinically relevant subtypes, while explaining the imaging rationale and signaling when human review is needed.</p>
+    <p class="bv-kicker">02 · Diagnosis</p>
+    <h2 id="diagnosis-title">Diagnosis</h2>
     <article class="bv-feature-band">
       <div class="bv-feature-copy">
-        <span class="label">Comprehensive coverage</span>
-        <h3>All major classes and most subtypes</h3>
-        <p>BrainVLM covers the 12 major WHO CNS5 brain tumor categories and extends toward less prevalent and imaging-ambiguous entities that are underrepresented in existing AI studies.</p>
+        <p>BrainVLM covers all 12 major WHO CNS5 categories, including less prevalent and imaging-ambiguous entities.</p>
       </div>
       <figure class="bv-diagnosis-figure"><img src="static/images/main_figure1a.svg" alt="BrainVLM coverage of major WHO CNS5 brain tumor categories" loading="lazy"></figure>
     </article>
     <article class="bv-feature-band reverse">
       <div class="bv-feature-copy">
-        <span class="label">Retrospective validation</span>
-        <h3>Performance across primary and external cohorts</h3>
-        <p>Retrospective and external testing measures diagnostic performance across the full tumor spectrum, including 3,877 primary-test patients and 1,334 patients from 11 independent hospitals.</p>
+        <p>Validation includes 3,877 primary-test patients and 1,334 patients from 11 independent hospitals.</p>
       </div>
       <figure><img src="static/images/main_figure2a.svg" alt="BrainVLM retrospective and external diagnostic performance" loading="lazy"></figure>
     </article>
-    <div class="bv-center"><a class="bv-link" href="diagnosis.html">Explore diagnosis and retrospective results →</a></div>
+    <div class="bv-center"><a class="bv-link" href="diagnosis.html">View diagnosis results →</a></div>
   </section>
 
   <section class="new-landing bv-section is-band bv-reveal" aria-labelledby="report-confidence-title">
     <div class="bv-section-inner">
-      <p class="bv-kicker">03 · Reports and confidence</p>
-      <h2 id="report-confidence-title">A diagnosis that can be reviewed</h2>
-      <p class="bv-lede">BrainVLM connects the predicted tumor label with a radiology-style explanation and a calibrated confidence signal.</p>
+      <p class="bv-kicker">03 · Reports</p>
+      <h2 id="report-confidence-title">Reports</h2>
       <article class="bv-feature-band bv-report-band">
         <div class="bv-feature-copy">
-          <span class="label">Structured clinical output</span>
-          <h3>From MRI evidence to a readable report</h3>
-          <p>Each case includes imaging findings, a diagnostic impression, and uncertainty information that helps clinicians understand the rationale and identify cases that need closer review.</p>
-          <a class="bv-link" href="report-confidence.html">Explore reports and confidence →</a>
+          <p>Each case connects imaging findings, diagnostic impression, and diagnostic confidence for clinician review.</p>
+          <a class="bv-link" href="report-confidence.html">View reports &amp; confidence →</a>
         </div>
-        <figure class="bv-report-figure"><img src="static/images/main_figure3f.svg" alt="BrainVLM MRI findings, radiology-style report, and confidence estimate" loading="lazy"></figure>
+        <figure class="bv-report-figure"><img src="static/images/main_figure3f.svg" alt="BrainVLM MRI findings, imaging report, and diagnostic confidence" loading="lazy"></figure>
       </article>
     </div>
   </section>
 
-  <section class="new-landing bv-section is-band bv-reveal" aria-labelledby="clinical-title">
+  <section class="new-landing bv-section bv-reveal" aria-labelledby="clinical-title">
     <div class="bv-section-inner">
-      <p class="bv-kicker">04 · Prospective and multi-reader evidence</p>
-      <h2 id="clinical-title">Tested in the clinical workflow</h2>
-      <p class="bv-lede">Prospective cases and neuroradiologists with and without AI assistance test whether BrainVLM can support clinical interpretation beyond retrospective benchmarks.</p>
-      <div class="bv-evidence">
+      <p class="bv-kicker">04 · Clinical</p>
+      <h2 id="clinical-title">Clinical</h2>
+      <p class="bv-lede">Prospective and multi-reader studies test BrainVLM beyond retrospective benchmarks.</p>
+      <div class="bv-evidence is-two">
         <article>
           <figure><img src="static/images/main_figure3a.svg" alt="BrainVLM prospective study results" loading="lazy"></figure>
           <h3>Prospective real-world results</h3>
@@ -1474,28 +1439,20 @@
           <p>In a blinded study with 248 cases and 12 readers, AI assistance improved performance across experience levels.</p>
           <div class="metric">+23.3% F1 · −36.1% time</div>
         </article>
-        <article>
-          <figure><img src="static/images/subfigures/supplementary-figure16.png" alt="Representative cases showing reduced diagnostic time with BrainVLM assistance" loading="lazy"></figure>
-          <h3>Workflow impact in representative cases</h3>
-          <p>Case examples show faster expert review, correction of an initial misdiagnosis, and increased confidence with BrainVLM assistance.</p>
-          <div class="metric">−70% / −71% reading time</div>
-        </article>
       </div>
-      <div class="bv-center"><a class="bv-link" href="clinical.html">View prospective and multi-reader results →</a></div>
+      <div class="bv-center"><a class="bv-link" href="clinical.html">View clinical results →</a></div>
     </div>
   </section>
 
   <section class="new-landing bv-section center-copy bv-reveal" aria-labelledby="dataset-training-title">
-    <p class="bv-kicker">05 · Dataset Preprocessing &amp; Training</p>
-    <h2 id="dataset-training-title">From heterogeneous MRI data to a reliable BrainVLM</h2>
-    <p class="bv-lede">BrainVLM is built through multi-source medical data processing, unified BrainTumor48K curation, and progressive training that moves from 2D representation learning to reliable 3D diagnosis.</p>
-    <div class="bv-process-preview">
-      <article><figure><img src="static/images/sup_figure1.svg" alt="Pipelines for processing structured repositories, web resources, and private medical institutions" loading="lazy"></figure><span class="idx">01 / PROCESS</span><h3>Multi-source data processing</h3><p>Structured datasets, web-based resources, and private clinical reports are cleaned, matched, translated, and standardized.</p></article>
-      <article><figure><img src="static/images/sup_figure2.svg" alt="BrainTumor48K data curation and dataset organization" loading="lazy"></figure><span class="idx">02 / CURATE</span><h3>BrainTumor48K construction</h3><p>Two-dimensional image–text data and three-dimensional MRI cases are organized into complementary training resources.</p></article>
-      <article><figure><img src="static/images/sup_figure5.svg" alt="BrainVLM progressive training and reliability training framework" loading="lazy"></figure><span class="idx">03 / TRAIN</span><h3>Progressive and reliable training</h3><p>Training advances from 2D MRI–text learning to hybrid 2D–3D alignment, volumetric instruction tuning, and confidence-aware inference.</p></article>
+    <p class="bv-kicker">05 · Data &amp; Training</p>
+    <h2 id="dataset-training-title">Data &amp; Training</h2>
+    <div class="bv-process-preview is-compact">
+      <article><figure><img src="static/images/sup_figure1.svg" alt="Pipelines for processing structured repositories, web resources, and private medical institutions" loading="lazy"></figure><span class="idx">01 / PROCESS</span><h3>Multi-source data processing</h3></article>
+      <article><figure><img src="static/images/sup_figure2.svg" alt="BrainTumor48K data curation and dataset organization" loading="lazy"></figure><span class="idx">02 / CURATE</span><h3>BrainTumor48K construction</h3></article>
+      <article><figure><img src="static/images/sup_figure5.svg" alt="BrainVLM progressive training and reliability training framework" loading="lazy"></figure><span class="idx">03 / TRAIN</span><h3>Progressive and reliable training</h3></article>
     </div>
-    <div class="bv-center"><a class="bv-link" href="evaluation.html">Explore Dataset Preprocessing &amp; Training →</a></div>
-    <p class="bv-closing">BrainVLM is a research and clinical decision-support system, not a standalone medical device. The goal is AI-assisted review: clearer evidence, better triage, and more efficient collaboration between models and clinicians.</p>
+    <div class="bv-center"><a class="bv-link" href="evaluation.html">View data &amp; training →</a></div>
   </section>
 
   <section class="hero">
@@ -1992,24 +1949,6 @@
   <!-- =======
   >>>>>>> 1cbde7e649282fbf883201ca946f8c603fdc3717 -->
 
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
 
 <!-- Statcounter tracking code -->
   
