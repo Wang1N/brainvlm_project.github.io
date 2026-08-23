@@ -84,7 +84,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
   
-  <link rel="stylesheet" href="static/css/landing-v2.css?v=20260821-lancet">
+  <link rel="stylesheet" href="static/css/landing-v2.css?v=20260823-dataset-summary">
   
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1325,7 +1325,7 @@
         <a href="report-confidence.html">Reports</a>
         <a href="clinical.html">Clinical</a>
         <a href="evaluation.html">Data &amp; Training</a>
-        <a href="static/pdfs/BrainVLM_main.pdf" target="_blank" rel="noopener">Paper</a>
+        <a href="static/pdfs/BrainVLM_main.pdf?v=20260823-main-link" target="_blank" rel="noopener">Paper</a>
         <a href="https://github.com/HKU-HealthAI/BrainVLM" target="_blank" rel="noopener">Code</a>
       </nav>
     </div>
@@ -1335,18 +1335,17 @@
   <section class="new-landing bv-hero" aria-label="BrainVLM introduction">
     <div class="bv-hero-body">
       <div class="bv-hero-copy">
-        <p class="bv-venue">Accepted for publication in <em>The Lancet Digital Health</em></p>
         <h1 class="bv-hero-title">BrainVLM — A vision-language foundation model for comprehensive preoperative brain tumor diagnosis</h1>
         <div class="bv-meta-strip bv-hero-meta">
           <p><strong>Authors</strong>Yinong Wang<sup>*</sup> · Jianwen Chen<sup>*</sup> · Zhou Chen<sup>*</sup> · Shuwen Kuang<sup>*</sup> · Haoning Jiang · Yanzhao Shi · Huichun Yuan · Yan-ran (Joyce) Wang · Bing Wang · Lei Wu · Bin Tang · Li Meng · Baihua Luo · Bin Zhou · Wei Ding · Weiming Zhong · Wei Hou · Yuanbing Chen · Zhiping Wan · Wei Wang · Zhenkun Xiao · Wenwu Wan · Allen He · Yuyin Zhou · Longbo Zhang · Feifei Wang · Zhixiong Liu · Michael Iv · Xuan Gong<sup>†</sup> · Liangqiong Qu<sup>†</sup></p>
           <p class="bv-institutions"><strong>Institutions</strong><span class="bv-institution-list">The University of Hong Kong · Xiangya School of Medicine, Central South University · etc.</span></p>
         </div>
+        <p class="bv-venue">Accepted for publication in <em>The Lancet Digital Health</em></p>
         <div class="bv-hero-actions">
           <div class="bv-cta-row">
-            <a class="bv-cta" href="static/pdfs/BrainVLM_main.pdf" target="_blank" rel="noopener">Paper</a>
-            <a class="bv-cta is-ghost" href="static/pdfs/BrainVLM_sup.pdf" target="_blank" rel="noopener">Supplement</a>
-            <a class="bv-cta is-ghost" href="https://github.com/HKU-HealthAI/BrainVLM" target="_blank" rel="noopener">View code</a>
-            <a class="bv-cta is-ghost" href="https://huggingface.co/spaces/jcccy/BrainVLM" target="_blank" rel="noopener">Try the demo</a>
+            <a class="bv-cta" href="static/pdfs/BrainVLM_main.pdf?v=20260823-main-link" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+            <a class="bv-cta is-ghost" href="https://github.com/HKU-HealthAI/BrainVLM" target="_blank" rel="noopener"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
+            <a class="bv-cta is-ghost" href="https://huggingface.co/spaces/jcccy/BrainVLM" target="_blank" rel="noopener"><span class="icon"><i class="fas fa-play"></i></span><span>Demo</span></a>
           </div>
         </div>
       </div>
@@ -1354,6 +1353,19 @@
         <img src="static/images/First_graph-44_ab.png" alt="BrainVLM dataset and multimodal MRI diagnostic pipeline" loading="eager">
         <figcaption>BrainVLM pipeline: multimodal MRI and patient metadata are integrated to produce a diagnosis, radiology-style report, and reliability estimate.</figcaption>
       </figure> -->
+    </div>
+  </section>
+
+  <section class="new-landing bv-abstract" aria-labelledby="abstract-title">
+    <div class="bv-abstract-inner">
+      <h2 id="abstract-title">Abstract</h2>
+      <div class="bv-abstract-copy">
+        <p><strong>Background.</strong> Preoperative diagnosis of brain tumors from MRI remains challenging because imaging features overlap across tumor types and specialist interpretation requires substantial experience. BrainVLM was developed to support comprehensive and reliable brain tumor diagnosis from preoperative multimodal data.</p>
+        <p><strong>Methods.</strong> BrainVLM classifies all 12 major brain tumor categories defined by WHO CNS5 and provides each diagnosis with a confidence score and a generated radiology report. The model was trained on multimodal data from 40,043 individuals and evaluated on 5,211 pathologically confirmed cases, including 3,877 patients from Xiangya Hospital and 1,334 patients from 11 independent hospitals. Clinical utility was further assessed in a prospective study of 1,009 patients and a blinded multi-reader study involving 12 neuroradiologists and 248 cases.</p>
+        <p><strong>Findings.</strong> BrainVLM achieved a macro-AUC of 0.85 and F1 score of 0.82 in the primary test cohort, and a macro-AUC of 0.80 and F1 score of 0.75 in external validation. Its prospective performance was comparable to or better than neuroradiologists across primary and external cohorts. With BrainVLM assistance, neuroradiologists improved their mean F1 score by 27.6% and reduced diagnostic time by 34.7%.</p>
+        <p><strong>Interpretation.</strong> BrainVLM combines comprehensive tumor classification, diagnostic confidence, and report generation within one framework. Retrospective, prospective, and multi-reader evaluations indicate its potential to support more accurate and efficient preoperative brain tumor assessment.</p>
+        <p class="bv-abstract-guide"><strong>Project overview.</strong> We introduce BrainVLM from four perspectives: <a href="#diagnosis-title">Diagnosis</a>, covering comprehensive tumor classification and retrospective validation; <a href="#report-confidence-title">Reports</a>, presenting generated radiology reports and diagnosis-associated confidence; <a href="#clinical-title">Clinical</a>, summarizing prospective and multi-reader studies; and <a href="#dataset-training-title">Data &amp; Training</a>, describing dataset construction, preprocessing, and model development.</p>
+      </div>
     </div>
   </section>
 
@@ -1379,7 +1391,7 @@
       <h2 id="input-title">Input</h2>
       <div class="bv-split bv-input-layout">
         <div class="bv-copy-stack">
-          <p>BrainVLM reads complete or missing T1, T1c, T2, and FLAIR as one case, using raw or pre-processed MRI with available metadata.</p>
+          <p>BrainVLM reads T1, T1c, T2, and FLAIR together as one case, while remaining usable when part of the MRI protocol is unavailable. It accepts raw or pre-processed MRI and can incorporate available metadata, allowing the same framework to accommodate variations in routine imaging protocols and data preparation.</p>
           <a class="bv-link" href="input.html">View input details →</a>
         </div>
         <div class="bv-visual-pair bv-input-visual">
@@ -1395,13 +1407,13 @@
     <h2 id="diagnosis-title">Diagnosis</h2>
     <article class="bv-feature-band">
       <div class="bv-feature-copy">
-        <p>BrainVLM covers all 12 major WHO CNS5 categories, including less prevalent and imaging-ambiguous entities.</p>
+        <p>To our knowledge, BrainVLM is the first MRI-based AI model to provide comprehensive preoperative classification across all 12 major WHO CNS5 brain tumor categories, together with a broad range of their subtypes. Its coverage extends beyond the few common tumor classes typically studied by existing AI systems to include less prevalent and imaging-ambiguous entities.</p>
       </div>
       <figure class="bv-diagnosis-figure"><img src="static/images/main_figure1a.svg" alt="BrainVLM coverage of major WHO CNS5 brain tumor categories" loading="lazy"></figure>
     </article>
     <article class="bv-feature-band reverse">
       <div class="bv-feature-copy">
-        <p>Validation includes 3,877 primary-test patients and 1,334 patients from 11 independent hospitals.</p>
+        <p>Diagnostic performance was evaluated in 3,877 held-out patients from Xiangya Hospital and 1,334 patients from 11 independent hospitals. This design examines both performance at the primary center and generalization across institutions with different scanners, populations, and clinical imaging practices.</p>
       </div>
       <figure><img src="static/images/main_figure2a.svg" alt="BrainVLM retrospective and external diagnostic performance" loading="lazy"></figure>
     </article>
@@ -1414,7 +1426,7 @@
       <h2 id="report-confidence-title">Reports</h2>
       <article class="bv-feature-band bv-report-band">
         <div class="bv-feature-copy">
-          <p>Each case connects imaging findings, diagnostic impression, and diagnostic confidence for clinician review.</p>
+          <p>BrainVLM provides more than a diagnostic label. For each case, it also generates a radiology report describing relevant MRI findings and presents the confidence associated with the diagnosis. Together, these outputs give clinicians more context for reviewing the result and help identify uncertain cases that may require closer assessment.</p>
           <a class="bv-link" href="report-confidence.html">View reports &amp; confidence →</a>
         </div>
         <figure class="bv-report-figure"><img src="static/images/main_figure3f.svg" alt="BrainVLM MRI findings, imaging report, and diagnostic confidence" loading="lazy"></figure>
@@ -1426,19 +1438,19 @@
     <div class="bv-section-inner">
       <p class="bv-kicker">04 · Clinical</p>
       <h2 id="clinical-title">Clinical</h2>
-      <p class="bv-lede">Prospective and multi-reader studies test BrainVLM beyond retrospective benchmarks.</p>
+      <p class="bv-lede">BrainVLM was evaluated beyond retrospective test sets through a prospective real-world study and a blinded multi-reader study. These experiments examine not only diagnostic performance, but also how the model may contribute when used alongside neuroradiologists in clinical review.</p>
       <div class="bv-evidence is-two">
         <article>
           <figure><img src="static/images/main_figure3a.svg" alt="BrainVLM prospective study results" loading="lazy"></figure>
           <h3>Prospective real-world results</h3>
-          <p>Prospective evaluation measures model performance before definitive diagnosis across surgical and non-operative pathways.</p>
+          <p>The prospective study evaluated consecutive patients before definitive diagnosis, including both surgical cases confirmed by pathology and non-operative cases established through follow-up or multidisciplinary assessment. Primary and external cohorts were analyzed separately to reflect different clinical settings.</p>
           <div class="metric">Primary F1 0.84</div>
         </article>
         <article>
           <figure><img src="static/images/main_figure4.svg" alt="BrainVLM multi-reader clinical evaluation" loading="lazy"></figure>
           <h3>AI-augmented neuroradiology</h3>
-          <p>In a blinded study with 248 cases and 12 readers, AI assistance improved performance across experience levels.</p>
-          <div class="metric">+23.3% F1 · −36.1% time</div>
+          <p>In a blinded crossover study, 12 neuroradiologists of different experience levels reviewed 248 cases with and without BrainVLM assistance. Access to the model output improved diagnostic performance across reader groups while reducing the time required for each assessment.</p>
+          <div class="metric">+27.6% F1 · −34.7% time</div>
         </article>
       </div>
       <div class="bv-center"><a class="bv-link" href="clinical.html">View clinical results →</a></div>
@@ -1448,10 +1460,15 @@
   <section class="new-landing bv-section center-copy bv-reveal" aria-labelledby="dataset-training-title">
     <p class="bv-kicker">05 · Data &amp; Training</p>
     <h2 id="dataset-training-title">Data &amp; Training</h2>
+    <div class="bv-dataset-summary">
+      <p><strong>Online sources.</strong> BrainTumor48K integrates 39 online sources, including BraTS23 and TCIA collections, ReMIND, UPENN-GBM, Radiopaedia, OpenNeuro, IXI, and Kaggle datasets such as Br35H, Figshare Brain Tumor Dataset, Brain Tumor Classification, and Brain Tumor MRI Images 44 Classes. PubMed Central and ImageCLEF contribute additional MRI–text pairs, while several OpenNeuro datasets provide healthy controls.</p>
+      <p><strong>Hospital data.</strong> The institutional cohort was collected from Xiangya Hospital and 11 independent centers: Changde First People’s Hospital, Tongji Hospital, the Second Affiliated Hospital of the University of South China, Shenzhen Second People’s Hospital, the Third Xiangya Hospital, Jiangxi Provincial People’s Hospital, Chongqing Traditional Chinese Medicine Hospital, the First and Second Affiliated Hospitals of Nanchang University, Hunan Children’s Hospital, and the First Hospital of Lanzhou University. These data include de-identified T1, T1c, T2, and FLAIR MRI, demographics, radiology reports, and pathological diagnoses when available.</p>
+      <p><strong>Processing.</strong> Structured repositories were converted into a common patient-level format linking MRI, diagnosis labels, metadata, and available reports. Web-derived figures were separated, filtered, and aligned with their captions. Institutional reports were restricted to the four MRI sequences, standardized through a clinician-validated bilingual terminology workflow, and reviewed by neuroradiologists before use. The resulting 2D and 3D data were then organized for progressive model training.</p>
+    </div>
     <div class="bv-process-preview is-compact">
-      <article><figure><img src="static/images/sup_figure1.svg" alt="Pipelines for processing structured repositories, web resources, and private medical institutions" loading="lazy"></figure><span class="idx">01 / PROCESS</span><h3>Multi-source data processing</h3></article>
-      <article><figure><img src="static/images/sup_figure2.svg" alt="BrainTumor48K data curation and dataset organization" loading="lazy"></figure><span class="idx">02 / CURATE</span><h3>BrainTumor48K construction</h3></article>
-      <article><figure><img src="static/images/sup_figure5.svg" alt="BrainVLM progressive training and reliability training framework" loading="lazy"></figure><span class="idx">03 / TRAIN</span><h3>Progressive and reliable training</h3></article>
+      <article><figure><img src="static/images/sup_figure1.svg" alt="Pipelines for processing structured repositories, web resources, and private medical institutions" loading="lazy"></figure><span class="idx">01 / PROCESS</span><h3>Multi-source data processing</h3><p>Separate workflows handle structured repositories, web-derived MRI–text pairs, and de-identified hospital data.</p></article>
+      <article><figure><img src="static/images/sup_figure2.svg" alt="BrainTumor48K data curation and dataset organization" loading="lazy"></figure><span class="idx">02 / CURATE</span><h3>BrainTumor48K construction</h3><p>The curated dataset contains 47,947 individuals, combining 2D MRI–text data with case-level 3D multimodal MRI.</p></article>
+      <article><figure><img src="static/images/sup_figure5.svg" alt="BrainVLM progressive training and reliability training framework" loading="lazy"></figure><span class="idx">03 / TRAIN</span><h3>Progressive training</h3><p>Training connects visual representation learning, comprehensive diagnosis, report generation, and diagnostic confidence.</p></article>
     </div>
     <div class="bv-center"><a class="bv-link" href="evaluation.html">View data &amp; training →</a></div>
   </section>
@@ -1536,30 +1553,11 @@
                       <!-- </a> -->
                     <!-- </span> -->
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/BrainVLM_sup.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
                   <span class="link-block">
-                    <a href="static/pdfs/BrainVLM_main.pdf" target="_blank"
+                    <a href="static/pdfs/BrainVLM_main.pdf?v=20260823-main-link" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
                     <span>Paper</span>
-                    </a>
-                  </span>
-
-                  <span class="link-block">
-                    <a href="static/pdfs/BrainVLM_sup.pdf" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon"><i class="fas fa-book-open"></i></span>
-                    <span>Supplement</span>
                     </a>
                   </span>
 
