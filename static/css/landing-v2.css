@@ -354,6 +354,19 @@ h2.title.publication-title.is-1::before {
   margin-top: 0.75rem;
 }
 
+.bv-author-link {
+  color: #000;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.28);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.bv-author-link:hover {
+  color: var(--teal-deep);
+  text-decoration-color: currentColor;
+}
+
 .bv-hero-meta .bv-institutions {
   margin-top: 0.9rem;
 }
